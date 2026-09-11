@@ -42,6 +42,20 @@ try:
 
     print(mensagem)
        # registrar_txt(mensagem)
+    topic = __import__("os").environ["NTFY_TOPIC"]
+
+    ntfy_url = f"https://ntfy.sh/{topic}"
+
+    notificacao = requests.post(
+     ntfy_url,
+     data=mensagem.encode("utf-8")
+     headers = {
+        "Title": "MeteoCaos",
+        "Priority": "default"
+    }
+)
+    notificacao.raise_for_status()
+    print("Notificação enviada com sucesso")
 
 except Exception as e:
     print("⚠️ Erro geral:", e)
