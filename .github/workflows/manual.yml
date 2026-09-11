@@ -1,7 +1,7 @@
 name: MeteoCaos
 on:
   workflow_dispatch:
-  scheldule:
+  schedule:
     - cron: '0 6 * * *'
       timezone: 'America/Sao_Paulo'
     - cron: '0 9 * * *'
