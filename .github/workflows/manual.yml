@@ -32,5 +32,7 @@ jobs:
       run: pip install -r requirements.txt
 
     - name: Executar MeteoCaos
+      env:
+        NTFY_TOPIC: ${{secrets.NTFY_TOPIC}}
       run: python meteocaos.py
         
