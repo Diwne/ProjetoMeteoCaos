@@ -48,7 +48,7 @@ try:
 
     notificacao = requests.post(
      ntfy_url,
-     data=mensagem.encode("utf-8")
+     data=mensagem.encode("utf-8"),
      headers = {
         "Title": "MeteoCaos",
         "Priority": "default"
