@@ -1,0 +1,35 @@
+name: MeteoCaos
+on:
+  workflow_dispatch:
+   scheldule:
+    -cron: '0 6 ***'
+      timezone: 'America/Sao_Paulo'
+   -cron: '0 9 ***'
+      timezone: 'America/Sao_Paulo'
+    -cron: '0 12 ***'
+      timezone: 'America/Sao_Paulo'
+    -cron: '0 15 ***'
+      timezone: 'America/Sao_Paulo'
+    -cron: '0 18 ***'
+      timezone: 'America/Sao_Paulo'
+    -cron: '0 21 ***'
+      timezone: 'America/Sao_Paulo'
+
+jobs:
+ executar:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Baixar código
+    uses: actions/checkout@v4
+
+    -name: Configurar Python
+    uses: actions/setup-python@v5
+    with: 
+      python-version: '3.12'
+
+    -name: Instalar dependências
+    run: pip install -r requeriments.txt
+
+    -name: Executar MeteoCaos
+    run: python meteocaos.py
+        
