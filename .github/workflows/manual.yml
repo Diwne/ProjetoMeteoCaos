@@ -3,17 +3,17 @@ on:
   workflow_dispatch:
   
   schedule:
-    - cron: '10 6 * * *'
+    - cron: '05 6 * * *'
       timezone: 'America/Sao_Paulo'
-    - cron: '10 9 * * *'
+    - cron: '05 9 * * *'
       timezone: 'America/Sao_Paulo'
-    - cron: '10 12 * * *'
+    - cron: '05 12 * * *'
       timezone: 'America/Sao_Paulo'
-    - cron: '10 15 * * *'
+    - cron: '05 15 * * *'
       timezone: 'America/Sao_Paulo'
-    - cron: '10 18 * * *'
+    - cron: '05 18 * * *'
       timezone: 'America/Sao_Paulo'
-    - cron: '10 21 * * *'
+    - cron: '05 21 * * *'
       timezone: 'America/Sao_Paulo'
 
 jobs:
