@@ -16,6 +16,8 @@ def frase_zero(temp, umid, chuva, nuvem):
         return "Calor desnecessário. A realidade está derretendo como você às segundas-feiras."
     elif nuvem > 80:
         return "Nublado. Mas não confunda com paz de espírito."
+    elif temp > 30 && umid < 40:
+        return "Calor desnecessário. A realidade está derretendo como você às segundas-feiras."
     else:
         return "O clima está calmo. O caos, como sempre, é interno."
         
