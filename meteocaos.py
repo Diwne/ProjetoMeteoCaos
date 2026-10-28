@@ -1,5 +1,5 @@
 import requests
-#from datetime import datetime
+from datetime import datetime
 #import smtplib
 #import tkinter as tk
 
@@ -41,9 +41,15 @@ try:
 
     mensagem = f"Clima: {temp}°C, Umidade: {umid}%, Chuva: {chuva}mm, Nuvens: {nuvem}%\n"
     mensagem += frase_zero(temp, umid, chuva, nuvem)
-
+    def registrar_txt(mensagem):
+     with open("historico_meteocaos.txt", "a", encoding="utf-8")
+     as arquivo:
+      horario = datetime.now().astimezone().strftime("%d/%m/Y %H:%M:%S")
+      arquivo.write(f"[{horario}] {mensagem}\n")
+      
     print(mensagem)
-       # registrar_txt(mensagem)
+    registrar_txt(mensagem)
+    
     topic = __import__("os").environ["NTFY_TOPIC"]
 
     ntfy_url = f"https://ntfy.sh/{topic}"
@@ -62,6 +68,5 @@ try:
 except Exception as e:
     print("⚠️ Erro geral:", e)
 
-   
-    
+
     
